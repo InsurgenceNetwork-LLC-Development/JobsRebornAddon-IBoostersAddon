@@ -14,7 +14,7 @@ public final class JobsEventListener implements Listener {
     public void onGain(JobsExpGainEvent event) {
         final String TYPE = "Jobs";
         final String NAMESPACE = "JOBS_REBORN";
-        final double[] totalMulti = {1};
+        final double[] totalMulti = {0};
 
         BoosterFindResult pResult = IBoosterAPI.INSTANCE.getCache(Objects.requireNonNull(event.getPlayer().getPlayer()))
                 .getBoosterDataManager().findActiveBooster(TYPE, NAMESPACE);
@@ -28,7 +28,9 @@ public final class JobsEventListener implements Listener {
             return null;
         }, () -> null);
 
-        event.setExp(calculateAmount(event.getExp(), totalMulti[0]));
+        if (totalMulti[0] > 0) {
+            event.setExp(calculateAmount(event.getExp(), totalMulti[0]));
+        }
     }
 
     private long calculateAmount(double amount, double multi) {
