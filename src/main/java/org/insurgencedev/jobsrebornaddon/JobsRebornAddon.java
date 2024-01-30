@@ -5,7 +5,7 @@ import org.insurgencedev.insurgenceboosters.api.addon.InsurgenceBoostersAddon;
 import org.insurgencedev.insurgenceboosters.libs.fo.Common;
 import org.insurgencedev.jobsrebornaddon.listeners.JobsEventListener;
 
-@IBoostersAddon(name = "JobsRebornAddon", version = "1.0.2", author = "InsurgenceDev", description = "JobsReborn Support")
+@IBoostersAddon(name = "JobsRebornAddon", version = "1.0.3", author = "InsurgenceDev", description = "JobsReborn Support")
 public class JobsRebornAddon extends InsurgenceBoostersAddon {
 
     @Override
